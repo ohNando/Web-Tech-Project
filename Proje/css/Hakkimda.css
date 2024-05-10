@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.murekkep.org%2Fwp-content%2Fuploads%2F2013%2F03%2Fbinary.jpg&f=1&nofb=1&ipt=028b9e7e5b2248c7594bf87b9bcf86d841d466a7ea5522411c731795e150f863&ipo=images');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    /* Metni ortala */
+}
+
+h1 {
+    height: 100px;
+    color: #333;
+    text-align: center;
+    line-height: 100px;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
