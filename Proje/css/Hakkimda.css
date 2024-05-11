@@ -1,12 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.murekkep.org%2Fwp-content%2Fuploads%2F2013%2F03%2Fbinary.jpg&f=1&nofb=1&ipt=028b9e7e5b2248c7594bf87b9bcf86d841d466a7ea5522411c731795e150f863&ipo=images');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
 }
 
 .container {
@@ -24,7 +23,30 @@ h1 {
     line-height: 100px;
 }
 
-p {
-    color: #666;
-    line-height: 1.6;
+span {
+    color: #6c757d;
+}
+
+.Hakkimda {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #6c757d;
+}
+
+.Hakkimda img {
+    height: auto;
+    width: 430px;
+}
+
+.hakkimdaText {
+    width: 430px;
+}
+
+.main {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
