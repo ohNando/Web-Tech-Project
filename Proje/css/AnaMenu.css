@@ -8,6 +8,16 @@ body {
     background-size: cover;
 }
 
+.navbar {
+    border-bottom: 3px rgb(162, 13, 122) solid;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: rgb(162, 13, 122);
+    font: bold;
+    /* Renk Ayarı */
+}
+
 .content {
     position: absolute;
     top: 50%;

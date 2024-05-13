@@ -2,7 +2,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.murekkep.org%2Fwp-content%2Fuploads%2F2013%2F03%2Fbinary.jpg&f=1&nofb=1&ipt=028b9e7e5b2248c7594bf87b9bcf86d841d466a7ea5522411c731795e150f863&ipo=images');
+    background-image: url('../gorseller/hakkimdaArkaPlan.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -15,6 +15,18 @@ body {
     text-align: center;
     /* Metni ortala */
 }
+
+.navbar {
+    border-bottom: 3px rgb(9, 30, 86) solid;
+}
+
+
+.navbar .navbar-nav .nav-link {
+    color: rgb(9, 30, 86);
+    font: bold;
+
+}
+
 
 h1 {
     height: 100px;
