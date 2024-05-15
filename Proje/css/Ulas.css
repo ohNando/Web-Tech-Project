@@ -51,3 +51,11 @@ body {
     color: whitesmoke !important;
 
 }
+
+.job-text {
+    text-align: center;
+    margin-top: 20px;
+    /* İstenilen boşluk miktarını ayarlayabilirsiniz */
+    color: white;
+    /* Yazı rengini isteğinize göre ayarlayabilirsiniz */
+}

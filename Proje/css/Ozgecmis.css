@@ -18,3 +18,10 @@ body {
     font: bold;
 
 }
+
+
+.my-table {
+    background-color: rgba(0, 0, 0, 0.0) !important;
+    align-content: center;
+    align-self: center;
+}
