@@ -4,11 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>İletişim Sayfasaı</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/Iletisim.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="AnaMenu.html">ohNando</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Hakkimda.html">Hakkımda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ozgecmis.html">Özgeçmiş</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Sehrim.html">Şehrim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Miras.html">Mirasımız</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Iletisim.html">İletişim Sayfası</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ulas.html">Bana Ulaşın</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Login.html">Giriş Yap</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
+    <div class="container">
+        <h2>İletişim Formu</h2>
+        <form action="#" method="POST">
+            <label for="name">İsim :</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="name">Soyisim :</label>
+            <input type="text" name="surname" id="surname" required>
+
+            <label for="email">Email Adresiniz :</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="subject">Iletişim Sebebiniz :</label>
+            <select id="subject" name="subject" required>
+                <option value="destek">Destek</option>
+                <option value="teklif">Tebrik</option>
+                <option value="soru">Merak</option>
+                <option value="diğer">Diğer</option>
+            </select>
+
+            <label for="message">Mesaj :</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <label for="file">Dosya Yüklemek isterseniz :</label>
+            <input type="file" id="file" name="file">
+
+            <label for="Fav-SoftLang">Favori Yazılım Diliniz : (İsteğe Bağlı)</label>
+            <input type="radio" name="Fav-SoftLang" id="Fav-SoftLang"> C
+            <input type="radio" name="Fav-SoftLang" id="Fav-SoftLang"> C++
+            <input type="radio" name="Fav-SoftLang" id="Fav-SoftLang"> C#
+            <input type="radio" name="Fav-SoftLang" id="Fav-SoftLang"> JavaScript
+            <input type="radio" name="Fav-SoftLang" id="Fav-SoftLang"> Python
+
+            <label>
+                <input type="checkbox" name="agree" required> <a href="https://www.youtube.com/watch?v=SegaPbTyFrQ">Veri
+                    politikasını</a>kabul ediyorum.
+            </label>
+
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
