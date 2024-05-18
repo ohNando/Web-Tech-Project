@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim Sayfasaı</title>
+    <title>İletişim Sayfası</title>
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/Iletisim.css">
+
+    <script src="js/form-validation.js"></script>
+    <script src="js/extention.js"></script>
 </head>
 
 <body>
@@ -47,18 +50,23 @@
 
     <div class="container">
         <h2>İletişim Formu</h2>
-        <form action="#" method="POST">
+        <form id="contactForm" name="contactForm" action="php/Iletisim.php" method="POST"
+            onsubmit="return validateForm();">
             <label for="name">İsim :</label>
             <input type="text" name="name" id="name">
 
-            <label for="name">Soyisim :</label>
+            <label for="surname">Soyisim :</label>
             <input type="text" name="surname" id="surname">
 
             <label for="email">Email Adresiniz :</label>
             <input type="text" name="email" id="email">
 
+            <label for="phone">Telefon Numaranız :</label>
+            <input type="text" name="phone" id="phone">
+
             <label for="subject">Iletişim Sebebiniz :</label>
             <select id="subject" name="subject">
+                <option value="seciniz">Seçiniz</option>
                 <option value="destek">Destek</option>
                 <option value="teklif">Tebrik</option>
                 <option value="soru">Merak</option>
@@ -79,68 +87,68 @@
             <input type="radio" name="Fav-SoftLang" id="Fav-SoftLang" value="Python"> Python
 
             <label>
-                <input type="checkbox" name="agree"> <a href="https://www.youtube.com/watch?v=SegaPbTyFrQ">Veri
+                <input type="checkbox" name="agree" value="control"> <a
+                    href="https://www.youtube.com/watch?v=SegaPbTyFrQ">Veri
                     politikasını</a> kabul ediyorum.
             </label>
 
-            <button type="button" id="submit-js">Gönder(JS)</button>
-            <button type="submit" id="submit-vue">Gönder(VUE.JS)</button>
-            <button type="button" id="reset-form">Temizle</button>
+            <button type="submit" id="submit-js">Gönder(JS)</button>
+            <button type="submit" id="submit-vue" @click="validateFormVue">Gönder(VUE.JS)</button>
+            <button type="button" id="reset-form"
+                onclick="document.getElementById('contactForm').reset()">Temizle</button>
         </form>
     </div>
 
     <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+    <script src="js/form-validation.js"></script>
     <script>
-        document.getElementById('submit-js').addEventListener('click', function (event) {
-            event.preventDefault();
+        const app = new Vue({
+            el: '#app',
+            data: {
+                formData: {
+                    name: null,
+                    surname: null,
+                    email: null,
+                    phone: null,
+                    subject: 'seciniz',
+                    message: null,
+                    agree: null,
+                }
+            },
+            methods: {
+                validateFormVue(event) {
+                    const formData = this.formData;
+                    if (formData.name === "" || formData.surname === "" || formData.email === "" || formData.phone === "" || formData.subject === "seciniz" || formData.message === "" || formData.agree === null) {
+                        window.alert('Lütfen eksik yer bırakmayınız!');
+                        event.preventDefault();
+                        return false;
+                    }
 
-            let isValid = true;
-            let messages = [];
+                    const nameDuzen = /^[a-zA-ZğüşöçİĞÜŞÖÇ]+$/;
+                    if (!nameDuzen.test(formData.name) || !nameDuzen.test(formData.surname)) {
+                        window.alert('Ad-Soyad alanında yalnızca harf olmalıdır');
+                        event.preventDefault();
+                        return false;
+                    }
 
-            const name = document.getElementById('name').value.trim();
-            const surname = document.getElementById('surname').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const agree = document.getElementById('agree').checked;
+                    const emailDuzen = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailDuzen.test(formData.email)) {
+                        window.alert("Geçersiz e-mail");
+                        event.preventDefault();
+                        return false;
+                    }
 
-            if (!name) {
-                isValid = false;
-                messages.push('Lütfen isminizi giriniz.');
-            }
-
-            if (!surname) {
-                isValid = false;
-                messages.push('Lütfen soyisminizi giriniz.');
-            }
-
-            if (!email) {
-                isValid = false;
-                messages.push('Lütfen email adresinizi giriniz.');
-            } else if (!validateEmail(email)) {
-                isValid = false;
-                messages.push('Lütfen geçerli bir email adresi giriniz.');
-            }
-
-            if (!agree) {
-                isValid = false;
-                messages.push('Veri politikasını kabul etmelisiniz.');
-            }
-
-            if (isValid) {
-                alert('Form başarıyla gönderildi!');
-            } else {
-                alert(messages.join('\n'));
+                    const phoneDuzen = /^(\+?90|0)?\s*5\d{2}\s*\d{3}\s*\d{2}\s*\d{2}$/;
+                    if (!phoneDuzen.test(formData.phone)) {
+                        window.alert("Geçersiz telefon numarası");
+                        event.preventDefault();
+                        return false;
+                    }
+                }
             }
         });
-
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
     </script>
-
-    <script src="js/form-validation-vue.js"></script>
-    <script src="js/extention.js"></script>
 </body>
 
 </html>
