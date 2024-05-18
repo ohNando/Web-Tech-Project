@@ -55,7 +55,7 @@
             <input type="text" name="surname" id="surname">
 
             <label for="email">Email Adresiniz :</label>
-            <input type="email" name="email" id="email">
+            <input type="text" name="email" id="email">
 
             <label for="subject">Iletişim Sebebiniz :</label>
             <select id="subject" name="subject">
@@ -83,7 +83,7 @@
                     politikasını</a> kabul ediyorum.
             </label>
 
-            <button type="submit" id="submit-js">Gönder(JS)</button>
+            <button type="button" id="submit-js">Gönder(JS)</button>
             <button type="submit" id="submit-vue">Gönder(VUE.JS)</button>
             <button type="button" id="reset-form">Temizle</button>
         </form>
@@ -91,7 +91,54 @@
 
     <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
-    <script src="js/form-validation.js"></script>
+    <script>
+        document.getElementById('submit-js').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            let isValid = true;
+            let messages = [];
+
+            const name = document.getElementById('name').value.trim();
+            const surname = document.getElementById('surname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const agree = document.getElementById('agree').checked;
+
+            if (!name) {
+                isValid = false;
+                messages.push('Lütfen isminizi giriniz.');
+            }
+
+            if (!surname) {
+                isValid = false;
+                messages.push('Lütfen soyisminizi giriniz.');
+            }
+
+            if (!email) {
+                isValid = false;
+                messages.push('Lütfen email adresinizi giriniz.');
+            } else if (!validateEmail(email)) {
+                isValid = false;
+                messages.push('Lütfen geçerli bir email adresi giriniz.');
+            }
+
+            if (!agree) {
+                isValid = false;
+                messages.push('Veri politikasını kabul etmelisiniz.');
+            }
+
+            if (isValid) {
+                alert('Form başarıyla gönderildi!');
+            } else {
+                alert(messages.join('\n'));
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+
     <script src="js/form-validation-vue.js"></script>
     <script src="js/extention.js"></script>
 </body>
