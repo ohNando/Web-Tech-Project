@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Sayfası</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Login.css">
+
+    <script src="js/form-validation-login.js"></script>
 </head>
 
 <body>
+    <div class="login-container">
+        <form class="login-box" name="loginForm" action="php/login.php" method="post"
+            onsubmit="return validateFormLogin();">
+            <h2>Giriş Yap</h2>
+            <div class="input-group">
+                <label for="email">E-posta Adresi</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div class="input-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </div>
 
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -50,7 +50,7 @@
 
     <div class="container">
         <h2>İletişim Formu</h2>
-        <form id="contactForm" name="contactForm" action="php/Iletisim.php" method="POST"
+        <form id="contactForm" name="contactForm" action="php/Iletisim.php" method="post"
             onsubmit="return validateForm();">
             <label for="name">İsim :</label>
             <input type="text" name="name" id="name">
@@ -101,7 +101,7 @@
 
     <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
-    <script src="js/form-validation.js"></script>
+
     <script>
         const app = new Vue({
             el: '#app',
