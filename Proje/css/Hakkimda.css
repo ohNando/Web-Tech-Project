@@ -13,18 +13,15 @@ body {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    /* Metni ortala */
 }
 
 .navbar {
-    border-bottom: 3px rgb(9, 30, 86) solid;
+    border-bottom: 3px #1e90ff solid;
 }
 
 
 .navbar .navbar-nav .nav-link {
-    color: rgb(9, 30, 86);
-    font: bold;
-
+    color: #1e90ff;
 }
 
 

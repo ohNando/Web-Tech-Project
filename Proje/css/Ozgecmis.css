@@ -9,19 +9,43 @@ body {
 }
 
 .navbar {
-    border-bottom: 3px rgb(117, 162, 34) solid;
+    border-bottom: 3px solid #008b8b;
 }
-
 
 .navbar .navbar-nav .nav-link {
-    color: rgb(117, 162, 34);
-    font: bold;
+    color: #008b8b;
 
 }
 
-
 .my-table {
-    background-color: rgba(0, 0, 0, 0.0) !important;
-    align-content: center;
-    align-self: center;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: #008b8b;
+    text-align: center;
+}
+
+.left-sidebar {
+    border: 3px solid#008b8b;
+}
+
+.left-sidebar img {
+    border: 3px solid #008b8b;
+}
+
+.bg-dark {
+    background-color: #343a40 !important;
+    border: 3px solid #008b8b;
+}
+
+.text-success {
+    color: #008b8b !important;
+}
+
+
+.container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.text-white {
+    margin-top: 50px;
 }
